@@ -10,7 +10,7 @@
 <script charset="utf-8" type="text/javascript" src="jquery.js"></script>
 
 <script>
-$.post('https://www.dacapobar.cl/formulario.php', {
+$.post('http://www.dacapobar.cl/formulario.php', {
 
     // These are the names of the form values
 
@@ -38,6 +38,7 @@ $.post('https://www.dacapobar.cl/formulario.php', {
 </script>
 
 
+
 </head> 
 <body> 
 
@@ -62,7 +63,7 @@ $.post('https://www.dacapobar.cl/formulario.php', {
 		<h1>artista1</h1>
 	</div>
 	<div data-role="content">	
-		<form action="http://www.dacapobar.cl/formulario.php" method="get"> 
+		<form action="http://www.dacapobar.cl/formulario.php" method="post"> 
 
 	<p><label>Nombre:<br />
 	<input type="text" name="FirstName" required />
