@@ -13,20 +13,9 @@ A simple PhoneGap Build application.
 <author href="https://example.com" email="you@example.com">
 Your Name
 </author>
-<access origin="http://dacapobar.cl/formulario.php" browserOnly="true"/>
-<access origin="http://dacapobar.cl/formulario.php" subdomains="true" />
-<access origin="http://dacapobar.cl/formulario.php"/>
 
-<access origin="http://dacapobar.cl"/>
-<access origin="http://*dacapobar.cl/formulario.php"/>
-<access origin="http://*.dacapobar.cl/formulario.php"/>
-<access origin="http://*dacapobar.cl"/>
-<access origin="http://*.dacapobar.cl"/>
-
-
-
-
-
+ <access origin="*" subdomains="true"/>
+ 
 
 
 </widget>
