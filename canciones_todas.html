@@ -49,10 +49,20 @@
 
 <div data-role="page" id="artista1">
 	<div data-role="header">
-		<h1>artista1</h1>
+		<h1>todas las canciones</h1>
 	</div>
 	<div data-role="content">	
 		<form action="http://www.dacapobar.cl/formulario.php" method="post"> 
+        
+    <datalist id="listas">
+        <option value="azul">
+        <option value="rojo">
+        <option value="amarillo">
+        <option value="negro">
+        <option value="verde">
+    </datalist>
+
+    <input name="color" list="listas">
 
 	<p><label>Nombre:<br />
 	<input type="text" name="FirstName" required />
@@ -66,97 +76,10 @@
 	<input type="email" name="Email" required />
 	</label></p>
 
-	<p><label>Consulta:<br />
-	<textarea name="MessageText"></textarea>
-	</label></p>
-	
-	<p>canciones<br />
-	<label><input  type="radio" name="opcion" value="opcion1" />cancion 1</label>
-	<label><input  type="radio" name="opcion" value="opcion2" />cancion 2</label>
-	<label><input  type="radio" name="opcion" value="opcion3" />cancion3</label></p>
-
 	<label><input type="button" onclick="submit()" value="submit contact"/></label>
 
 </form>
 	</div>
-	<div data-role="footer">
-		<h4>pagina foter</h4>
-	</div>
-</div>
-
-<div data-role="page" id="artista2">
-	<div data-role="header">
-		<h1>artista2</h1>
-	</div>
-	<div data-role="content">	
-		<form action="envia.php" method="post"> 
-
-	<p><label>Nombre:<br />
-	<input type="text" name="nombre" required />
-	</label></p>
-
-	<p><label>Apellido:<br />
-	<input type="text" name="apellido" required />
-	</label></p>
-
-	<p><label>Email:<br />
-	<input type="email" name="email" required />
-	</label></p>
-
-	<p><label>Consulta:<br />
-	<textarea name="consulta"></textarea>
-	</label></p>
-	
-	<p>canciones<br />
-	<label><input  type="radio" name="opcion" value="opcion1" />cancion 1</label>
-	<label><input  type="radio" name="opcion" value="opcion2" />cancion 2</label>
-	<label><input  type="radio" name="opcion" value="opcion3" />cancion3</label></p>
-
-	<label><input type="submit" value="Enviar" /></label>
-
-</form>	
-	</div>
-	<div data-role="footer">
-		<h4>foter</h4>
-	</div>
-</div>
-
-<div data-role="page" id="artista3">
-	<div data-role="header">
-		<h1>artista3</h1>
-	</div>
-	<div data-role="content">	
-		<form action="envia.php" method="post"> 
-
-	<p><label>Nombre:<br />
-	<input type="text" name="nombre" required />
-	</label></p>
-
-	<p><label>Apellido:<br />
-	<input type="text" name="apellido" required />
-	</label></p>
-
-	<p><label>Email:<br />
-	<input type="email" name="email" required />
-	</label></p>
-
-	<p><label>Consulta:<br />
-	<textarea name="consulta"></textarea>
-	</label></p>
-	
-	<p>canciones<br />
-	<label><input  type="radio" name="opcion" value="opcion1" />cancion 1</label>
-	<label><input  type="radio" name="opcion" value="opcion2" />cancion 2</label>
-	<label><input  type="radio" name="opcion" value="opcion3" />cancion3</label></p>
-
-	<label><input type="submit" value="Enviar" /></label>
-
-</form>
-	</div>
-	<div data-role="footer">
-		<h4>foter</h4>
-	</div>
-</div>
 
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
@@ -192,6 +115,14 @@ function cargarPost(idPost){
         });
         
 }
+</script>
+<script type="text/javascript">
+$(document).ready(function()
+{
+$("input[name=color]").change(function() {
+alert($("input[name=color]").val());
+});
+});
 </script>
 
     </body>
