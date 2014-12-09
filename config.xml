@@ -14,4 +14,7 @@ A simple PhoneGap Build application.
 Your Name
 </author>
 
+<access origin="http://www.dacapobar.cl/formulario.php"/>
+
+
 </widget>
