@@ -9,25 +9,32 @@
 <script src="jquery-mobile/jquery-2.1.1.js" type="text/javascript"></script>
 <script charset="utf-8" type="text/javascript" src="jquery.js"></script>
 
-<script charset="utf−8" type="text/javascript">
-function connect(e)
-{
-var term= {button:e};
-$.ajax({
-url:'"http://www.dacapobar.cl/formulario.php',
-type:'POST',
-data:term,
-dataType:'json',
-error:function(jqXHR,text_status,strError){
-alert("no connection");},
-timeout:60000,
-success:function(data){
-$("#result").html("");
-for(var i in data){
-$("#result").append("<li>"+data[i]+"</li>");
-}
-}
-});}
+<script>
+$.post('https://www.dacapobar.cl/formulario.php', {
+
+    // These are the names of the form values
+
+    FirstName: $('#FirstName_input').val(),
+    LastName: $('#LastName_input').val(),
+    Email: $('#Email_input').val(),
+    MessageText: $('#MessageText_input').val()
+
+    // HTML function
+
+    }, function (html) {
+        // Place the HTML in a astring
+        var response=html;
+
+        // PHP was done and email sent
+        if (response=="success") {
+            alert("Message sent!"); 
+        } else {
+
+            // Error postback
+            alert("Sorry please fill all fields!"); 
+        return false;
+    }
+});
 </script>
 
 
@@ -55,22 +62,22 @@ $("#result").append("<li>"+data[i]+"</li>");
 		<h1>artista1</h1>
 	</div>
 	<div data-role="content">	
-		<form action="http://www.dacapobar.cl/formulario.php" method="post"> 
+		<form action="http://www.dacapobar.cl/formulario.php" method="get"> 
 
 	<p><label>Nombre:<br />
-	<input type="text" name="nombre" required />
+	<input type="text" name="FirstName" required />
 	</label></p>
 
 	<p><label>Apellido:<br />
-	<input type="text" name="apellido" required />
+	<input type="text" name="LastName" required />
 	</label></p>
 
 	<p><label>Email:<br />
-	<input type="email" name="email" required />
+	<input type="email" name="Email" required />
 	</label></p>
 
 	<p><label>Consulta:<br />
-	<textarea name="consulta"></textarea>
+	<textarea name="MessageText"></textarea>
 	</label></p>
 	
 	<p>canciones<br />
@@ -78,7 +85,7 @@ $("#result").append("<li>"+data[i]+"</li>");
 	<label><input  type="radio" name="opcion" value="opcion2" />cancion 2</label>
 	<label><input  type="radio" name="opcion" value="opcion3" />cancion3</label></p>
 
-	<label><input type="submit" value="Enviar" /></label>
+	<label><input type="button" onclick="submit()" value="submit contact"/></label>
 
 </form>
 	</div>
