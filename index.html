@@ -6,12 +6,31 @@
 <link href="jquery-mobile/jquery.mobile-1.0.min.css" rel="stylesheet" type="text/css"/>
 <script src="jquery-mobile/jquery-1.6.4.min.js" type="text/javascript"></script>
 <script src="jquery-mobile/jquery.mobile-1.0.min.js" type="text/javascript"></script>
-<script>
-$(document).ready(function(){ 
-        $("#content").load("http://www.dacapobar.cl/formulario.php"); 
-    });
+<script src="jquery-mobile/jquery-2.1.1.js" type="text/javascript"></script>
+<script charset="utf-8" type="text/javascript" src="jquery.js"></script>
 
+<script charset="utf−8" type="text/javascript">
+function connect(e)
+{
+var term= {button:e};
+$.ajax({
+url:'"http://www.dacapobar.cl/formulario.php',
+type:'POST',
+data:term,
+dataType:'json',
+error:function(jqXHR,text_status,strError){
+alert("no connection");},
+timeout:60000,
+success:function(data){
+$("#result").html("");
+for(var i in data){
+$("#result").append("<li>"+data[i]+"</li>");
+}
+}
+});}
 </script>
+
+
 </head> 
 <body> 
 
