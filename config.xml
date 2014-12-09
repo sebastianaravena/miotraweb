@@ -15,6 +15,15 @@ Your Name
 </author>
 
 <access origin="http://dacapobar.cl/formulario.php"/>
+<access origin="http://dacapobar.cl"/>
+<access origin="http://*dacapobar.cl/formulario.php"/>
+<access origin="http://*.dacapobar.cl/formulario.php"/>
+<access origin="http://*dacapobar.cl"/>
+<access origin="http://*.dacapobar.cl"/>
+
+
+
+
 
 
 </widget>
