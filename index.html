@@ -10,31 +10,30 @@
 <script charset="utf-8" type="text/javascript" src="jquery.js"></script>
 
 <script>
-$.post('http://www.dacapobar.cl/formulario.php', {
-
-    // These are the names of the form values
-
-    FirstName: $('#FirstName_input').val(),
-    LastName: $('#LastName_input').val(),
-    Email: $('#Email_input').val(),
-    MessageText: $('#MessageText_input').val()
-
-    // HTML function
-
-    }, function (html) {
-        // Place the HTML in a astring
-        var response=html;
-
-        // PHP was done and email sent
-        if (response=="success") {
-            alert("Message sent!"); 
-        } else {
-
-            // Error postback
-            alert("Sorry please fill all fields!"); 
-        return false;
-    }
-});
+function cargarPost(idPost){
+    $.ajax({
+            url: 'http://www.dacapobar.cl/formulario.php',
+            data: ({id:idPost}),
+            async:true,
+            cache: false,
+			dataType: 'jsonp',
+            jsonp: 'jsoncallback',
+            success: function(datos){
+                var content=[];
+                var dataJson=eval(datos);
+                $('#titresbuc').html(dataJson[0].titulo);
+                $('#resbuc').html(dataJson[0].cont);
+                //$("#lista").append(content.join(""));
+                //$("#lista").listview('refresh');
+            },
+            error: function(datos){
+                alert('error');
+                
+            },
+            
+        });
+        
+}
 </script>
 
 
