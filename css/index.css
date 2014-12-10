@@ -21,7 +21,7 @@
 }
 
 body {
-    background-image:url(../../App%20Dacapo/fondo.jpg);
+    background-image:url(../img/fondo.jpg);
     background-attachment:fixed;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:12px;
@@ -51,8 +51,8 @@ body {
 	clear:both;
 	}
 .botonelegir{
-	 height:50px;
-	 width:100%;
+	 height:auto;
+	 width:auto;
 	 background-color:#0C3;
 	margin: 70px auto;
 	}
