@@ -54,17 +54,15 @@
 	<div data-role="content">	
 		<form action="http://www.dacapobar.cl/formulario.php" method="post"> 
         
-    <datalist id="listas">
-        <option value="azul">
-        <option value="rojo">
-        <option value="amarillo">
-        <option value="negro">
-        <option value="verde">
-    </datalist>
+<input type="text" name="country" id="autocomplete"/>
+<div class="autocomplete-suggestions">
+    <div class="autocomplete-group"><strong>NHL</strong></div>
+    <div class="autocomplete-suggestion autocomplete-selected">...</div>
+    <div class="autocomplete-suggestion">...</div>
+    <div class="autocomplete-suggestion">...</div>
+</div>
 
-    <input name="color" list="listas">
-
-	<p><label>Nombre:<br />
+	><p><label>Nombre:<br />
 	<input type="text" name="FirstName" required />
 	</label></p>
 
@@ -75,7 +73,18 @@
 	<p><label>Email:<br />
 	<input type="email" name="Email" required />
 	</label></p>
+    
+    <datalist id="listas">
+        <option value="azul">
+        <option value="rojo">
+        <option value="amarillo">
+        <option value="negro">
+        <option value="verde">
+    </datalist>
 
+    <input name="color" list="listas">
+    
+    
 	<label><input type="button" onclick="submit()" value="submit contact"/></label>
 
 </form>
@@ -122,6 +131,21 @@ $(document).ready(function()
 $("input[name=color]").change(function() {
 alert($("input[name=color]").val());
 });
+});
+</script>
+
+<script>
+var countries = [
+   { value: 'Andorra', data: 'AD' },
+   // ...
+   { value: 'Zimbabwe', data: 'ZZ' }
+];
+
+$('#autocomplete').autocomplete({
+    lookup: countries,
+    onSelect: function (suggestion) {
+        alert('You selected: ' + suggestion.value + ', ' + suggestion.data);
+    }
 });
 </script>
 
