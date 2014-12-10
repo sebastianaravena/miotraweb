@@ -1097,6 +1097,8 @@ a.ui-link-inherit {
 
 .ui-mobile-viewport {
     margin: 0;
+	height:100%;
+    width:100%;
     overflow-x: visible;
     -webkit-text-size-adjust: none;
     -ms-text-size-adjust: none;
@@ -2861,4 +2863,7 @@ ol.ui-listview .ui-li-jsnumbering:before {
 
 .ui-page { 
 background:transparent;
+height:100%;
+width:100%;
+
 }
